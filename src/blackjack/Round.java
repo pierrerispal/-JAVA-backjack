@@ -39,10 +39,10 @@ public class Round {
         int randomInt3 = random.nextInt(deck.getList().size());
         int randomInt4 = random.nextInt(deck.getList().size());
         
-        player.addCard(deck.getList().get(randomInt));
-        player.addCard(deck.getList().get(randomInt2));
-        banquer.addCard(deck.getList().get(randomInt3));
-        banquer.addCard(deck.getList().get(randomInt4));        
+        player.getHand().addCard(deck.getList().get(randomInt));
+        player.getHand().addCard(deck.getList().get(randomInt2));
+        banquer.getHand().addCard(deck.getList().get(randomInt3));
+        banquer.getHand().addCard(deck.getList().get(randomInt4));        
     }
     /**
      * Checking if the banquer's first card is an As
@@ -53,10 +53,10 @@ public class Round {
     }
     /**
      * Checking if the player has a blackjack at the beggining
-     * @TODO maybe an abstract class for player and banquer for common methods
+     * @TODO banquer and player(s) will be separated because reasons
      * @return boolean
      */
     public boolean blackjackCheckPlayer(){
-        return true;
+        return((player.getHand().get(0).getValue()==1 ||player.getHand().get(1).getValue()==1)&&player.getHand().getScore()==11);
     }
 }

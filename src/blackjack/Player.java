@@ -1,18 +1,16 @@
 package blackjack;
 
-import java.util.ArrayList;
-
 
 public class Player {
     private double money;
-    private ArrayList<Card> hand;
+    private Hand hand;
     private double bet; //money bet
 
     //==========================================================================
     //==========================================================================
     //==========================================================================
     public Player() {
-        this.hand=new ArrayList<>();
+        this.hand=new Hand();
         this.money = 5000.00;
     }
 
@@ -20,7 +18,7 @@ public class Player {
         return money;
     }
 
-    public ArrayList<Card> getHand() {
+    public Hand getHand() {
         return hand;
     }
 
@@ -32,20 +30,13 @@ public class Player {
     //========================UTILITIES=========================================
     //==========================================================================
     
-    //place a bet
+    /**
+     * setting a bet
+     * @param amount 
+     */
     public void bet(double amount){
         this.bet=amount;
         this.money-=amount;
-    }
-    public void addCard(Card card){
-        this.hand.add(card);
-    }
-    public int getScore(){
-        int total=0;
-        for(Card card:this.hand){
-            total+= card.getValue();
-        }
-        return total;
     }
     
     //==========================================================================

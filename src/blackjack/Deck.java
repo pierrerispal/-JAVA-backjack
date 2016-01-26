@@ -15,6 +15,10 @@ import java.util.Arrays;
 public class Deck {
     private ArrayList<Card> list;
 
+    /**
+     * generating a deck with 52 cards
+     * that's all
+     */
     public Deck() {
         list=new ArrayList<>();
         ArrayList<String> colors=new ArrayList<>(Arrays.asList("club","spade","diamond","hearth"));
@@ -31,11 +35,16 @@ public class Deck {
             list.add(K);
         }        
     }
-    public void removeCard(int i){
-        this.list.remove(i);
-    }
     public ArrayList<Card> getList() {
         return list;
+    }
+    /**
+     * remove a card from the deck
+     * (no not get the same twice obviously)
+     * @param i 
+     */
+    public void removeCard(int i){
+        this.list.remove(i);
     }
 
     @Override
