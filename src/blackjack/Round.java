@@ -13,7 +13,7 @@ public class Round {
 
     public Round() {
         this.banquer=new Banquer();
-        this.deck=new Deck();
+        this.deck=new Deck(4);
         this.player=new Player();
         this.random=new Random();
     }
@@ -40,9 +40,13 @@ public class Round {
         int randomInt4 = random.nextInt(deck.getList().size());
         
         player.getHand().addCard(deck.getList().get(randomInt));
+        deck.removeCard(randomInt);
         player.getHand().addCard(deck.getList().get(randomInt2));
+        deck.removeCard(randomInt2);
         banquer.getHand().addCard(deck.getList().get(randomInt3));
-        banquer.getHand().addCard(deck.getList().get(randomInt4));        
+        deck.removeCard(randomInt3);
+        banquer.getHand().addCard(deck.getList().get(randomInt4)); 
+        deck.removeCard(randomInt4);
     }
     /**
      * Checking if the banquer's first card is an As

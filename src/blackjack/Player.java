@@ -1,5 +1,5 @@
 package blackjack;
-
+import java.util.Random;
 
 public class Player {
     private double money;
@@ -43,13 +43,20 @@ public class Player {
     //========================PLAYABLE==========================================
     //==========================================================================
     public void doubleBet(){
-        
+        this.money-=this.bet;
+        this.bet+=this.bet;
+        //@TODO @GOTO endOfTurn
     }
+    //@TODO send the deck as param
     public void hit(){
+        Random random=new Random();
+        /*int randomInt = random.nextInt(deck.getList().size());
         
+        this.getHand().addCard(deck.getList().get(randomInt));
+        deck.removeCard(randomInt);*/
     }
     public void stand(){
-        
+        //@TODO @GOTO endOfTurn
     }
     public void insurance(){
         
