@@ -20,6 +20,7 @@ public class Blackjack {
         //rnd.startingBet();
         rnd.startingCards();
         System.out.println(rnd.player.getHand().toString());
+        System.out.println(rnd.player.getHand().getScore());
         System.out.println(rnd.blackjackCheckPlayer());
     }
     

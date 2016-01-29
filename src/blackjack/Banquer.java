@@ -12,11 +12,6 @@ public class Banquer {
     public Hand getHand() {
         return hand;
     }
-    public void hit(){
-        
-    }
-    public void stand(){
-        
-    }
-    
+    //@TODO function endOfTurn
+    //draw to 16, stay after 17    
 }

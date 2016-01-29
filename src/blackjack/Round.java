@@ -63,4 +63,11 @@ public class Round {
     public boolean blackjackCheckPlayer(){
         return((player.getHand().get(0).getValue()==1 ||player.getHand().get(1).getValue()==1)&&player.getHand().getScore()==11);
     }
+    /**
+     * function that ask the player for choice for what he wanna do
+     * @TODO change for android
+     */
+    public void choice(){
+        
+    }
 }

@@ -22,6 +22,8 @@ public class Hand {
     }
     /**
      * get the score of the hand
+     * @TODO if its an As, check if its under or above 21 to choose if the As 
+     * will be 1 or 11
      * @return int
      */
     public int getScore(){
@@ -29,6 +31,7 @@ public class Hand {
         for(Card card:this.cards){
             total+= card.getValue();
         }
+        
         return total;
     }
     /**
