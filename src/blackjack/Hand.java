@@ -15,7 +15,7 @@ public class Hand {
     }
     /**
      * Add a card to the hand
-     * @param Card 
+     * @param card 
      */
     public void addCard(Card card){
         this.cards.add(card);
@@ -35,14 +35,14 @@ public class Hand {
                 total+= card.getValue();
             }            
         }
-        if(as && total>21){
+        if(as==true && total>21){
             total-=10;
         }
         return total;
     }
     /**
      * get the ieme card of the hand
-     * @param int
+     * @param i
      * @return Card
      */
     public Card get(int i){

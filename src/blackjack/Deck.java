@@ -19,7 +19,7 @@ public class Deck {
     /**
      * generating a deck with 52 cards that's all
      *
-     * @params int i : number of copy of cards you want the more there are, the
+     * @params int j : number of copy of cards you want the more there are, the
      * harder it gets to count the cards
      */
     public Deck(int j) {
