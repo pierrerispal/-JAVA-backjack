@@ -37,7 +37,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" + "value=" + value + ", color=" + color + ", pic=" + pic + '}';
+        return pic;
     }
     
     

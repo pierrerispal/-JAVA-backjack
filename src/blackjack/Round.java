@@ -82,6 +82,8 @@ public class Round {
      * @TODO change for android
      */
     public void choice(){
+        System.out.println("Player : "+player.getHand());
+        System.out.println("Banquer : "+banquer.getHand());
         System.out.println("1: double | 2: hit | 3: stand");
         String choice = sc.nextLine();
 
@@ -113,11 +115,13 @@ public class Round {
     public void endOfTurn(){
         System.out.println(player.getHand().getScore()+","+banquer.getHand().getScore());
         //@TODO What appen when both have blackjack
-        if(player.getHand().getScore()>banquer.getHand().getScore() || this.blackjackCheckPlayer()){
+        if((player.getHand().getScore()>banquer.getHand().getScore() || this.blackjackCheckPlayer())&& player.getHand().getScore()<22){
             player.win(this.blackjackCheckPlayer());
         }else{
             System.out.println("perdu");
         }
+        System.out.println("MONEY : "+player.getMoney());
+        System.out.println("=====================================================");
     }
     
     //==========================================================================

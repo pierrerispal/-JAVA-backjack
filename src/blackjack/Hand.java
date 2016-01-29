@@ -22,16 +22,22 @@ public class Hand {
     }
     /**
      * get the score of the hand
-     * @TODO if its an As, check if its under or above 21 to choose if the As 
-     * will be 1 or 11
      * @return int
      */
     public int getScore(){
         int total=0;
+        boolean as=false;
         for(Card card:this.cards){
-            total+= card.getValue();
+            if(card.getValue()==1){
+                as = true;
+                total+= 11;
+            }else{
+                total+= card.getValue();
+            }            
         }
-        
+        if(as && total>21){
+            total-=10;
+        }
         return total;
     }
     /**
@@ -48,6 +54,6 @@ public class Hand {
 
     @Override
     public String toString() {
-        return "Hand{" + "cards=" + cards + '}';
+        return "cards=" + cards;
     }
 }
