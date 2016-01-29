@@ -42,9 +42,10 @@ public class Player {
     //==========================================================================
     //========================PLAYABLE==========================================
     //==========================================================================
-    public void doubleBet(){
+    public void doubleBet(Deck deck){
         this.money-=this.bet;
         this.bet+=this.bet;
+        this.hit(deck);
         //@TODO @GOTO endOfTurn
     }
     //@TODO send the deck as param
@@ -79,9 +80,11 @@ public class Player {
     public void win(boolean bj){
         if(bj){
             //the player win his bet + his bet*1.5
+            System.out.println("blackjack");
             this.money+=this.bet+(this.bet*1.5);
         }else{
             //the player only win his bet + his bet
+            System.out.println("just win");
             this.money+=this.bet*2;
         }
         this.bet=0;

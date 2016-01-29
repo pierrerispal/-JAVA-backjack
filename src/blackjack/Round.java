@@ -51,7 +51,7 @@ public class Round {
         int randomInt4 = random.nextInt(deck.getList().size());
         banquer.getHand().addCard(deck.getList().get(randomInt4)); 
         deck.removeCard(randomInt4);
-        System.out.println(player.getHand());
+        //System.out.println(player.getHand());
     }
     //==========================================================================
     //========================VERIFICATION STUFF================================
@@ -82,8 +82,22 @@ public class Round {
      * @TODO change for android
      */
     public void choice(){
-        //if the player choose to get a new card do the choice again
+        System.out.println("1: double | 2: hit | 3: stand");
+        String choice = sc.nextLine();
+
         //if the player choose to double go to endOfROund
+        if("1".equals(choice)){
+            player.doubleBet(this.deck);
+            this.endOfTurn();
+        }
+        //if the player choose to get a new card do the choice again
+        if("2".equals(choice)){
+            player.hit(this.deck);
+            this.choice();
+        }
+        if("3".equals(choice)){
+            this.endOfTurn();
+        }
         //if the player choose to stand go to EndOFTurn
     }
     /**
@@ -98,9 +112,11 @@ public class Round {
      */
     public void endOfTurn(){
         System.out.println(player.getHand().getScore()+","+banquer.getHand().getScore());
-        if(player.getHand().getScore()>banquer.getHand().getScore()){
-            System.out.println("blackjack");
+        //@TODO What appen when both have blackjack
+        if(player.getHand().getScore()>banquer.getHand().getScore() || this.blackjackCheckPlayer()){
             player.win(this.blackjackCheckPlayer());
+        }else{
+            System.out.println("perdu");
         }
     }
     
@@ -122,6 +138,7 @@ public class Round {
             System.out.println("insurance");
             //this.insuranceChoice();
         }
+        //@TODO check for score
         //then give the choice to the player
         this.choice();
         
