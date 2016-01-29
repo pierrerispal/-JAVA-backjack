@@ -42,6 +42,9 @@ public class Hand {
     public Card get(int i){
         return this.cards.get(i);
     }
+    public void empyHand(){
+        this.cards=new ArrayList<>();
+    }
 
     @Override
     public String toString() {

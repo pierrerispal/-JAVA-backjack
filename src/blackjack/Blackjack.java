@@ -17,11 +17,10 @@ public class Blackjack {
      */
     public static void main(String[] args) {
         Round rnd=new Round();
-        //rnd.startingBet();
-        rnd.startingCards();
-        System.out.println(rnd.player.getHand().toString());
-        System.out.println(rnd.player.getHand().getScore());
-        System.out.println(rnd.blackjackCheckPlayer());
+        for(int i=0;i<100;i++){
+            rnd.processus();
+        }
+        
     }
     
 }

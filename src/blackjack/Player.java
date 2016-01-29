@@ -68,10 +68,28 @@ public class Player {
         this.money-=this.bet/2;
         this.bet+=this.bet/2;
     }
-
-    @Override
-    public String toString() {
-        return "Player{" + "hand=" + hand + '}';
-    }
     
+    //==========================================================================
+    //========================END OF TURN=======================================
+    //==========================================================================
+    /**
+     * if the player wins stuff appen
+     * @param bj 
+     */
+    public void win(boolean bj){
+        if(bj){
+            //the player win his bet + his bet*1.5
+            this.money+=this.bet+(this.bet*1.5);
+        }else{
+            //the player only win his bet + his bet
+            this.money+=this.bet*2;
+        }
+        this.bet=0;
+    }
+    /**
+     * if the player loose, stuff appen
+     */
+    public void loose(){
+        this.bet=0;
+    }    
 }
